@@ -26,6 +26,8 @@ model SentimentData {
   brandId              Int      @map("brand_id")
   isNegativeAboutBrand Boolean  @map("is_negative_about_brand")
   matchedKeywords      String[] @default([]) @map("matched_keywords")
+  intentType           String?  @map("intent_type")
+  intentScore          Float?   @map("intent_score")
   brand                Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
 
   @@unique([url, brandId])
@@ -36,6 +38,7 @@ model SentimentData {
   @@index([brandId])
   @@index([brandId, subreddit])
   @@index([upvotes])
+  @@index([intentType])
   @@map("sentiment_data")
 }
 

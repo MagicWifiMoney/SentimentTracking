@@ -35,6 +35,8 @@ interface SentimentData {
   postType: string;
   upvotes: number;
   numComments: number;
+  intentType?: string;
+  intentScore?: number;
 }
 
 interface OverviewStats {
@@ -99,6 +101,11 @@ export default function DashboardClient() {
   const [brandKeywords, setBrandKeywords] = useState<string[]>([]);
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
   const [scanTimeRange, setScanTimeRange] = useState('month');
+
+  // Draft response state
+  const [draftingId, setDraftingId] = useState<number | null>(null);
+  const [draftResponses, setDraftResponses] = useState<{ [key: number]: any }>({});
+  const [draftLoading, setDraftLoading] = useState(false);
   
   // Pagination
   const [page, setPage] = useState(1);
@@ -393,6 +400,37 @@ export default function DashboardClient() {
       newExpanded.add(id);
     }
     setExpandedItems(newExpanded);
+  };
+
+  const draftResponse = async (itemId: number) => {
+    setDraftLoading(true);
+    setDraftingId(itemId);
+    try {
+      const response = await fetch('/api/sentiment/draft-response', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sentimentId: itemId, tone: 'professional' }),
+      });
+      if (!response.ok) throw new Error('Failed to draft response');
+      const result = await response.json();
+      setDraftResponses(prev => ({ ...prev, [itemId]: result }));
+    } catch (error) {
+      toast({ title: 'Error', description: 'Failed to generate response draft', variant: 'destructive' });
+    } finally {
+      setDraftLoading(false);
+      setDraftingId(null);
+    }
+  };
+
+  const getIntentColor = (intentType: string) => {
+    switch (intentType) {
+      case 'purchase': return 'bg-emerald-100 text-emerald-800 border-emerald-200';
+      case 'complaint': return 'bg-red-100 text-red-800 border-red-200';
+      case 'comparison': return 'bg-amber-100 text-amber-800 border-amber-200';
+      case 'question': return 'bg-blue-100 text-blue-800 border-blue-200';
+      case 'praise': return 'bg-violet-100 text-violet-800 border-violet-200';
+      default: return 'bg-gray-100 text-gray-800 border-gray-200';
+    }
   };
 
   const getSentimentColor = (label: string) => {
@@ -839,6 +877,12 @@ export default function DashboardClient() {
                               <Badge variant="outline">
                                 Score: {item.sentimentScore?.toFixed(2) || '0.00'}
                               </Badge>
+                              {item.intentType && (
+                                <Badge className={getIntentColor(item.intentType)}>
+                                  <Target className="w-3 h-3 mr-1" />
+                                  <span className="capitalize">{item.intentType}</span>
+                                </Badge>
+                              )}
                               {item.matchedKeywords && item.matchedKeywords.length > 0 && (
                                 <div className="flex items-center gap-1.5">
                                   <Tag className="w-3 h-3 text-purple-600" />
@@ -899,15 +943,62 @@ export default function DashboardClient() {
                                 <p>{item.content || 'No content'}</p>
                               ) : (
                                 <p>
-                                  {item.content ? 
-                                    (item.content.length > 200 ? 
-                                      `${item.content.substring(0, 200)}...` : 
+                                  {item.content ?
+                                    (item.content.length > 200 ?
+                                      `${item.content.substring(0, 200)}...` :
                                       item.content
                                     ) : 'No content'
                                   }
                                 </p>
                               )}
                             </div>
+
+                            {/* Draft Response Button */}
+                            {expandedItems.has(item.id) && (
+                              <div className="mt-3 pt-3 border-t border-gray-100">
+                                {!draftResponses[item.id] ? (
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => draftResponse(item.id)}
+                                    disabled={draftLoading && draftingId === item.id}
+                                    className="text-blue-600 border-blue-200 hover:bg-blue-50"
+                                  >
+                                    {draftLoading && draftingId === item.id ? (
+                                      <><Loader2 className="w-3 h-3 mr-2 animate-spin" />Drafting...</>
+                                    ) : (
+                                      <><Lightbulb className="w-3 h-3 mr-2" />Draft Response</>
+                                    )}
+                                  </Button>
+                                ) : (
+                                  <div className="space-y-3">
+                                    <div className="text-xs font-semibold text-gray-500 uppercase">AI Response Drafts</div>
+                                    {draftResponses[item.id]?.responses?.map((resp: any, idx: number) => (
+                                      <div key={idx} className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                                        <div className="flex items-center justify-between mb-1">
+                                          <span className="text-xs font-semibold text-blue-700">{resp.label}</span>
+                                          <Button
+                                            variant="ghost"
+                                            size="sm"
+                                            className="h-6 text-xs"
+                                            onClick={() => navigator.clipboard.writeText(resp.text)}
+                                          >
+                                            Copy
+                                          </Button>
+                                        </div>
+                                        <p className="text-sm text-gray-800">{resp.text}</p>
+                                        <p className="text-xs text-gray-500 mt-1">{resp.approach}</p>
+                                      </div>
+                                    ))}
+                                    {draftResponses[item.id]?.tips?.length > 0 && (
+                                      <p className="text-xs text-gray-500">
+                                        <span className="font-medium">Tip:</span> {draftResponses[item.id].tips[0]}
+                                      </p>
+                                    )}
+                                  </div>
+                                )}
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
