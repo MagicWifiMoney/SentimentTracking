@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.env
+.env.local
+.env*.local
+nltk_data/
+*.tsbuildinfo
+.abacus.donotdelete
+__pycache__/
+*.pyc

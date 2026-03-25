@@ -1,0 +1,233 @@
+[
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1qkvawa/ive_been_looking_to_upgrade_my_board_for_some/",
+    "timestamp": "2026-01-23T16:23:50",
+    "content": "",
+    "author": "BBCTaylor",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "I’ve been looking to upgrade my board for some time now . Right now I have a isinwheel V10 with about 3.1k miles on it. I done mastered that board and looking for more speed and torque. I’ve looked at Acedecks, Propel, Evolve , Stooge and Meepo. When I came across Linnpower mind blowing! Thoughts 💭?",
+    "sentiment_score": 0.0,
+    "sentiment_label": "neutral",
+    "is_negative_about_meepo": false
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1qjpg6n/diy_battery_quick_swap_options_onto_m5_bolts/",
+    "timestamp": "2026-01-22T08:47:28",
+    "content": "Would like to upgrade a Meepo Voyager to have a battery quick swap system like this one for Boosted, but it uses M6 bolts and the Meepo Voyager uses M5:  \n\n[https://momentum-boards.com/products/quick-disconnect-boosted-backfire-battery-swap](https://momentum-boards.com/products/quick-disconnect-boosted-backfire-battery-swap)\n\nLooking for a similar version that goes onto the existing M5 bolts and has a locking lever, if possible? I'm having trouble finding that, and am also curious about any DIY you have tried? \n\nThanks!",
+    "author": "SnowboardingLife",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "DIY battery quick swap options, onto M5 bolts (Meepo Voyager, etc)?",
+    "sentiment_score": 0.8091,
+    "sentiment_label": "positive",
+    "is_negative_about_meepo": false
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1qik4ck/meepo_v3_max_battery_died_before_100_miles/",
+    "timestamp": "2026-01-21T01:26:46",
+    "content": "Hey all, \n\nWanted to share what just happened with my Meepo V3 Max. My board's battery just completely died with less than 100 miles on it. The board shut off halfway through a ride and won't turn back on.\n\nThere was no crash, no water damage, nothing like that. Just normal riding. Looking back, I did notice the range getting worse and worse over the last few weeks. Each ride I could go less and less distance before the battery meter would drop. I thought maybe it was the cold or something, but it kept getting worse until it finally quit.\n\nI contacted Meepo support and went through the warranty claim. They were pretty good about it and have already approved sending me a new battery. So props to them for that, the process was smooth.\n\nI'm posting this as a heads up for other V3 Max owners. If you start losing range for no reason, it might be the BMS going bad. Its a pretty frustrating failure, especially so early.\n\nI'm glad they're fixing it, but I'm really hoping the new battery lasts longer. \n\nHas anyone else had this happen? Any tips for when I get the new battery installed?",
+    "author": "Terrible_Length_6170",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Meepo V3 Max battery died before 100 miles. Warranty worked, but be warned.",
+    "sentiment_score": -0.8389,
+    "sentiment_label": "negative",
+    "is_negative_about_meepo": true
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1qi7a96/second_water_damage_on_my_meepo/",
+    "timestamp": "2026-01-20T17:23:56",
+    "content": "Yesterday evening I was going to unplug my Meepo Mini 5 from its charger just to see that shit burning. First I unplugged it from the skateboard then from the wall plug and I swear this shit looked like a fucking torch. \n\nIt seems that the input soaked up a tiny bit of water and let it rust (the streets weren't even wet past days). Also it's probably not a good idea to let 2 Amps fload though a tiny rusted metal piece. \n\nIt's fucking hilarious that water is a greater fire hazard than Vodka. This shit nearly burned down my house twice.\n\nThis is actually the second time I changed the plug because of rust. Anyway, has someone a solution to prevent water fucking up my chargers?",
+    "author": "Laserlari",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Second water damage on my Meepo",
+    "sentiment_score": -0.8982,
+    "sentiment_label": "negative",
+    "is_negative_about_meepo": true
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1qeae8e/meepo_mlr_diy_esc_swap/",
+    "timestamp": "2026-01-16T08:16:46",
+    "content": "Haven't been on this reddit in a long time but figured I'd pop back in and share! Did this DIY swap on the MLR with flipskys \"non vesc\" esc and I've been really impressed with it so far. AMA. I'll be doing a full performance score comparison between this and the original esc. ​​",
+    "author": "RB_E-motion",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Meepo MLR DIY ESC Swap",
+    "sentiment_score": 0.8917,
+    "sentiment_label": "positive",
+    "is_negative_about_meepo": false
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1qdfn16/meepo_voyager_battery_cell_opinions_new_50s_vs/",
+    "timestamp": "2026-01-15T10:01:40",
+    "content": "The newest iterations of the Meepo Voyager X use different battery cells, changing to a Samsung 50S when it previously was Molicel P42A. \n\n  \nMy understanding is that Samsung S50 should theoretically give better range per ride, but the downside is less charging cycles (longevity), worse thermal management, and more voltage sag when riding aggressively? \n\nUnderstood that a big unknown factor is whether or not the welds inside your Voyager battery pack are solid since there have been mixed results reported if it came from Meepo, but I'm curious about any opinions and experiences with these various cells? I'm guessing that Molicel 42A is preferred, unless my info/assumptions above are wrong? \n\nThanks!",
+    "author": "SnowboardingLife",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Meepo Voyager battery cell opinions? - new 50S vs. old P42A",
+    "sentiment_score": -0.747,
+    "sentiment_label": "negative",
+    "is_negative_about_meepo": true
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1qdfmpo/meepo_voyager_battery_cell_opinions_new_50s_vs/",
+    "timestamp": "2026-01-15T10:01:09",
+    "content": "The newest iterations of the Meepo Voyager X use different battery cells, changing to a Samsung 50S when it previously was Molicel P42A. \n\n  \nMy understanding is that Samsung S50 should theoretically give better range per ride, but the downside is less charging cycles (longevity), worse thermal management, and more voltage sag when riding aggressively? \n\nUnderstood that a big unknown factor is whether or not the welds inside your Voyager battery pack are solid since there have been mixed results reported if it came from Meepo, but I'm curious about any opinions and experiences with these various cells? I'm guessing that Molicel 42A is preferred, unless my info/assumptions above are wrong? \n\nThanks!",
+    "author": "SnowboardingLife",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Meepo Voyager battery cell opinions? - new 50S vs. old P42A",
+    "sentiment_score": -0.747,
+    "sentiment_label": "negative",
+    "is_negative_about_meepo": true
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1qbuedm/waterproofing_meepo_mini_5/",
+    "timestamp": "2026-01-13T15:33:10",
+    "content": "",
+    "author": "Booty-Muncher-irl",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Waterproofing Meepo Mini 5",
+    "sentiment_score": 0.0,
+    "sentiment_label": "neutral",
+    "is_negative_about_meepo": false
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1qagxcy/board_for_city_environment_1k2k/",
+    "timestamp": "2026-01-12T01:05:43",
+    "content": "Looking for a board to use in my city. Mostly parks, boardwalks. I just want something with a decent range. I will mostly be riding with my dog running on my side. I don’t know where to begin. I keep seeing meepo boards on tiktok but a small search here points to them being dangerous and inconsistent. ",
+    "author": "theblacktoothgainz",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Board for city environment. $1k-2k",
+    "sentiment_score": -0.6124,
+    "sentiment_label": "negative",
+    "is_negative_about_meepo": true
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1q8rqej/which_board_to_choose/",
+    "timestamp": "2026-01-10T02:14:32",
+    "content": "I’m planning on getting an electric skateboard the 2 that interest me the most are the liquid LQS-1 or the Meepo Flow. \n\nI really love the idea of the liquid board but the top speed is kinda slow and I’m worried how it’ll going up hilly ish roads.\n\nThe flow board I like how it looks but I’m worried I’d get bored \n\nI’d probably use it to commute around my tiny town it’s normally a 10-15 walk to most places so I wouldn’t be going super far but I’d like if I wanted to go a bit farther it wouldn’t be a drag",
+    "author": "BroomSweeper99",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Which board to choose?",
+    "sentiment_score": 0.848,
+    "sentiment_label": "positive",
+    "is_negative_about_meepo": false
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1q8i54z/buy_now_or_wait/",
+    "timestamp": "2026-01-09T19:43:21",
+    "content": "Good afternoon everybody. I’m semi new to the eskate community but I have a good amount of experience skating regular boards. \n\nAbout a month ago I got a Meepo V5 and it’s been amazing as a beginner board. My only complaint with it is literally that I can’t ride it more. So for that reason I’ve been looking into upgrading and I came across the Exway Atlas Pro 4WD belt drive. \n\nThis board checks absolutely every box for me, only issue is the price. I see it’s on sale rn for $1500 on the Exway website. It’s at $2100 on Amazon so I’m pretty sure this is a real sale and the board isn’t just always on “sale”. I’m wondering if anyone knows if I wait when and if I’ll see another sale this good for this board? I have enough to just suck it up and buy it rn, but if possible I’d like to wait another month or two. \n\nDo you think I’ll be paying full price over $2000 by then and I should take advantage of the deal now? Are there any major complaints or things I should know before getting this board specifically? Thanks for your input guys!",
+    "author": "hughjassmcgee",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Buy now or wait?",
+    "sentiment_score": 0.9796,
+    "sentiment_label": "positive",
+    "is_negative_about_meepo": false
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1q71wud/tire_options_for_veymax_x4/",
+    "timestamp": "2026-01-08T04:15:01",
+    "content": "TLDR; What PU sleeve can I use for the Veymax X4? Can I use 90mm\\*60mm even though the original is 105\\*65? Which brand works, and does the 5-hole mounting pattern for the PU sleeve standard across hub motor boards? Also hub motor diameter of the Veymax X4 is 65mm, exactly the same as the Meepo V4s. \n\nHi, I'm new here and electric skateboards in general. I bought a used Veymax X4 and so far wiped it out only once, so I'm having quite the time with it. I notice that my rear tires are getting quite worn out, so I'm looking at alternatives for replacement. After browsing around, it seems like the hub motor for the Veymax X4 is fairly similar to the one from the Meepo V4s, but I cannot confirm the physical dimensions. I do notice, however, that they seem to have the same 5-hole circular mounting pattern. FYI, original tires on the Veymax X4 are 105\\*65mm. Now here's my question: \n\n1) What kind of hub PU sleeve can I use for the Veymax X4 aside from the one from Veymax's website (I'm not paying $100 for 4 tires)? Here are the links to websites I think work, but need ygs to confirm.  \n\n[https://www.meepoboard.com/collections/motors/products/meepo-105mm-donut-wheel-set](https://www.meepoboard.com/collections/motors/products/meepo-105mm-donut-wheel-set)\n\n[https://www.puaida.com/products/105-mm-at-glow-wheels-and-sleeves-for-p6d-dual-hub-motor-set?srsltid=AfmBOoopT2aXIN\\_rCVgIgBYZEGfI-uyTzrOGeuybs\\_6SczA4k1MP-wXj](https://www.puaida.com/products/105-mm-at-glow-wheels-and-sleeves-for-p6d-dual-hub-motor-set?srsltid=AfmBOoopT2aXIN_rCVgIgBYZEGfI-uyTzrOGeuybs_6SczA4k1MP-wXj)\n\n  \n[https://tyneeboard.com/collections/motors-pu-sleeves/products/tynee-donut-105mm-wheels](https://tyneeboard.com/collections/motors-pu-sleeves/products/tynee-donut-105mm-wheels)\n\n  \n2) Since the original tires of the Veymax x4 are 105mm\\*65mm, I see that 90mm\\*60mm PU sleeves are more popular and cheaper. Can I use those instead? link to those below. \n\n[https://tyneeboard.com/collections/motors-pu-sleeves/products/hub-motor-sleeves-for-mini-3-sl-ultra-sl](https://tyneeboard.com/collections/motors-pu-sleeves/products/hub-motor-sleeves-for-mini-3-sl-ultra-sl)\n\n  \n[https://www.meepoboard.com/collections/motors/products/a-parir-of-90-pu-sleeves-for-v5-mini5-v3s-mini3s](https://www.meepoboard.com/collections/motors/products/a-parir-of-90-pu-sleeves-for-v5-mini5-v3s-mini3s)\n\nI'm mostly worried that the 5-hole circular mounting pattern does not match the one in the Veymax x4. I tried finding the dimension of the 5-hole PU sleeve mounting pattern, but have had no luck, and Google says they are \"proprietary,\" which I doubt, and hope there is a standard for that. Also, Cloudwheels are NOT an option for me, not in this economy at least, I'm broke asf. Thanks in advance.",
+    "author": "WeeklyFollowing8802",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Tire options for veymax x4",
+    "sentiment_score": -0.3372,
+    "sentiment_label": "negative",
+    "is_negative_about_meepo": true
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1q6wlpf/linnpower_zephyr_pro_commuting_update/",
+    "timestamp": "2026-01-08T00:19:08",
+    "content": "A little over 2 weeks ago I made a post reviewing the Linnpower Zephyr Pro and how it holds up for my commute to work and back. The TLDR of that post was that it hurt my feet, battery didn't last as long as I wanted, not that great over small bumps. I've received tons of feedback and tips to help improve my experience, and I've applied them.\n\nSo, this is my update:\n\nFor context, this is my first electric skateboard. I use to ride skateboards and penny boards when I was younger, but I'm an old man now (29) and am more fragile so I had a huge learning curve to overcome.\n\nThe first change I made since my first post was I got more comfortable shoes. This was a huge game changer. Since I made this change I don't have achy feet anymore after riding longer distances. First problem solved!\n\nSecond, I started charging my battery to full in the mornings before I leave instead of keeping it at 80% to preserve the battery life. Idk why, but now the charge lasts forever and I have no issues with the battery life anymore.\n\nLast, one thing people kept telling me was that I just needed to get more comfortable on the board to overcome small obstacles and bumps. This was true. Now that I'm more comfortable on the board I've been averaging around 20-25mph and can comfortable maneuver and adjust as needed.\n\nOther changes I made was I started using bike lanes more. At first I was terrified to ride it on the road so I was always riding on sidewalks or dirt paths, which made my commute a lot longer and opened me up to way more obstacles than necessary. Now that I feel more confident on the board, I've been cruising in the bike lanes and in street lanes as needed.\n\nThe only complaint I can think of at this point is that it's not easy to carry around, especially up and down stairs. There's a way you can hold it to were you can hold the back side and just roll the first side around, but if you need to carry it fully then it can be a little awkward and heavy. I know they have a handle you can attach to it, but I like the Meepo board style where they have a built in handle carved in the side of the board to carry like a suit case.\n\nI plan on purchasing more boards in the future. Please leave your suggestions.",
+    "author": "Substantial_Two_4772",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Linnpower Zephyr Pro - Commuting *Update*",
+    "sentiment_score": 0.9568,
+    "sentiment_label": "positive",
+    "is_negative_about_meepo": false
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1q6kszl/meepo_2_board_switch/",
+    "timestamp": "2026-01-07T16:59:06",
+    "content": "This thing is fast for a little board bought for 10 bucks just had to fix it... not fond of the short unstable style of this board lookimg to switch it out any ideas on what style or brand i should look into?",
+    "author": "No-Seaworthiness5920",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Meepo 2 board switch",
+    "sentiment_score": -0.6002,
+    "sentiment_label": "negative",
+    "is_negative_about_meepo": true
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1q5wya3/help_me_find_my_next_daily_driver_for_a_22km/",
+    "timestamp": "2026-01-06T22:15:52",
+    "content": "Hi everyone,\n\nI just started a new job and I’m looking to ditch the car. I have a **22km (14 miles) daily round-trip commute** and I’d much rather spend my budget on a high-quality board than sit in traffic.\n\nI’m an experienced rider; I’ve used a WowGo S2 Pro for years until it unfortunately died after a snowy ride. I’m now looking for a serious upgrade that can become my \"best friend\" on the road.\n\n**My Profile & Requirements:**\n\n* **Weight:** 85kg (187 lbs).\n* **Range:** I need a solid **35km+ (22 miles+)** of real-world range to be safe.\n* **Ride Style:** I love carving and a bit of dancing. I prefer long and wide decks (I really liked the feel of the Meepo Hurricane when I tried it).\n* **Waterproofing:** This is a dealbreaker. Since this is for daily commuting and I’ve already lost a board to water/snow, I need something with **excellent water resistance** (not just \"splash-proof\").\n* **Reliability:** Looking for a reputable brand with decent customer support.\n\n**Maintenance & Tech:** I’m not afraid to get my hands dirty. I'm perfectly fine with belt-driven boards and performing my own maintenance/repairs if needed.\n\n**Specific Questions:**\n\n1. **Safety Gear:** What protections would you recommend for high-speed commuting?\n2. **Winter Riding:** It was -8°C (17°F) here this morning. Any tips or hacks for riding in extreme cold and maintaining battery health?\n3. **Street Legality:** Is there a way to have a \"stealth\" speed limiter or a secondary remote mode to lock the speed at 25km/h in case of a police check?\n\n**Budget:** Around **€1500** for the whole setup (board + gear).\n\nThanks in advance for your help!",
+    "author": "Agreeable_Bedroom_80",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Help me find my next \"Daily Driver\" for a 22km commute (All-weather/High Range)",
+    "sentiment_score": 0.982,
+    "sentiment_label": "positive",
+    "is_negative_about_meepo": false
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1q48xi2/why_do_people_hate_on_meepo/",
+    "timestamp": "2026-01-05T02:07:50",
+    "content": "So im just getting into esk8ing my first board was a meepo 2 mini that didnt work bought for 10 bucks with 52miles on it. Could not figure it out so decided to buy a used teamgee h5 with 650 miles on it for 70 bucks been riding it for almost 3 months now. Well today i figured out the mini and got that bitch to work and i can say the meepo is so much better then my h5. Im absolutely loving it. Why do people hate on meepo?",
+    "author": "No-Seaworthiness5920",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Why do people hate on Meepo",
+    "sentiment_score": -0.4076,
+    "sentiment_label": "negative",
+    "is_negative_about_meepo": true
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1q3umrv/meepo_mini_2/",
+    "timestamp": "2026-01-04T16:43:53",
+    "content": "Bought a mini2 for 10 bucks was told did not charge bypassed the usb and led screen put battery straight to board and bam it works only 52 miles on it cant wait to ride this bitch... way better then my teamgee h5 ",
+    "author": "No-Seaworthiness5920",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Meepo mini 2",
+    "sentiment_score": -0.1779,
+    "sentiment_label": "negative",
+    "is_negative_about_meepo": true
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1q207zb/wheel_i_be_ok/",
+    "timestamp": "2026-01-02T14:37:59",
+    "content": "Ok funny title aside, I’m a newbie to the eskate community and I have a few questions about wheels.\n\nSo I was gifted a Meepo V5 for Christmas and I’m absolutely loving it. I’ve tricked it out with some lights and I heard that upgrading the wheels to 105s is practically a must. So I went out and bought the Meepo Cyclone 105s.\n\nWell I didn’t do my research and I was supposed to buy the Meepo Donuts. So now I’m left with essentially 2 sets of 72A front wheels, and the only hub motor wheels that Meepo sells are 78A. \n\nWhich brings me to my question, what’s the best course of action from here? Do I buy the Meepo rear hub wheels and have mismatched durometer wheels? Or do I just buy a set of cloudwheel Discovery FE’s and take the L on the $120 set of wheels I just bought? Maybe they can be a Christmas gift to my buddy who just got a belt driven Meepo lol.",
+    "author": "hughjassmcgee",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Wheel I be ok?",
+    "sentiment_score": 0.974,
+    "sentiment_label": "positive",
+    "is_negative_about_meepo": false
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1pz71bu/meepo_mini_3_making_noise/",
+    "timestamp": "2025-12-30T03:20:36",
+    "content": "My Meepo Mini 3 started making a weird noise when coasting.  It doesn't seem to do it under acceleration.  If you listen to the video it sort of sounds as if a plastic bag is stuck to the wheels.  Any idea what it is?  The board only has 200 miles on it.",
+    "author": "s_m_simon",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Meepo Mini 3 making noise",
+    "sentiment_score": -0.4019,
+    "sentiment_label": "negative",
+    "is_negative_about_meepo": true
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1pwefov/looking_for_recommendations_for_a_reliable_street/",
+    "timestamp": "2025-12-26T20:41:18",
+    "content": "My Meepo voyager has been having nothing but issues recently. I am looking towards getting a new board that will last me for over a year without issues, and preferably have good customer support. I would appreciate any input or suggestions towards my choice.\n\nI am looking at the backfire zealot, however I know that they used to have issues with overloading.\n\nI also heard that Tynee is a solid brand.\n\nI have done my own research but many posts are over a year old and I was curious if anybody heard any updates on Backfire’s issues or any new known issues with certain street boards.\n\n  \nEdit: I am now looking towards the OMW lancer as well.",
+    "author": "Mr_CupcakeXL",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Looking for recommendations for a reliable street board",
+    "sentiment_score": 0.9455,
+    "sentiment_label": "positive",
+    "is_negative_about_meepo": false
+  },
+  {
+    "url": "https://reddit.com/r/ElectricSkateboarding/comments/1puvigi/second_board_ive_got_a_janky_collection_some/",
+    "timestamp": "2025-12-24T19:38:13",
+    "content": "Just bought TeamGee H20 for $120 off FBMKTPL, my other board is a Maxfind FF Belt it's needing new wheels since Cloudwheels reputation happened to me, I paid $225 for it.\n\nI seen an Exway locally nearby for sale, how would everyone rate it?\n\nI like the FF Belt's board more than this typical old school fish tail board, and I feel like I need to tighten the rear trucks some on the H20 cause I felt a good little bit of rear-end speed wobble.\n\nAs for the FF Belt the two sets of wheels I'm considering are \n\nhttps://www.meepoboard.com/collections/all-terrain-electric-skateboard-wheels/products/190mm-pneumatic-tires-for-hurricane pretty sure I could just use my old belt maybe and swap it out and then this set https://tyneeboard.com/products/150mm-off-road-pneumatic-wheels\n\n",
+    "author": "CrazyChrys",
+    "subreddit": "ElectricSkateboarding",
+    "post_title": "Second Board, I've Got A Janky Collection Some Would Say",
+    "sentiment_score": 0.9628,
+    "sentiment_label": "positive",
+    "is_negative_about_meepo": false
+  }
+]
