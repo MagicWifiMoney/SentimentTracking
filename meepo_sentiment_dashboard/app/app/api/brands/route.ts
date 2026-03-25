@@ -112,7 +112,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create brand with subreddits in a transaction
-    const brand = await prisma.$transaction(async (tx) => {
+    const brand = await prisma.$transaction(async (tx: any) => {
       // Create the brand
       const newBrand = await tx.brand.create({
         data: {
