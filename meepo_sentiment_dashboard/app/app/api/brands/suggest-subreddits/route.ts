@@ -30,37 +30,42 @@ async function generateAISuggestions(
     ? `The brand operates locally in ${city}${state ? `, ${state}` : ''}${country ? `, ${country}` : ''}. Include relevant city/regional subreddits.`
     : 'The brand operates nationally/globally.';
 
-  const prompt = `You are a Reddit expert helping a brand find the most relevant subreddits to monitor for sentiment analysis and customer feedback.
+  const prompt = `You are a Reddit marketing strategist. Your job is to find EVERY relevant subreddit where "${brandName}" might be discussed, reviewed, complained about, or recommended.
 
-Brand Details:
-- Brand Name: ${brandName}
-- Website: ${website || 'Not provided'}
-- Industry Category: ${category}
-- ${locationContext}
+BRAND: ${brandName}
+WEBSITE: ${website || 'Not provided'}
+CATEGORY: ${category}
+${locationContext}
 
-Your task: Suggest 12-15 highly relevant Reddit communities where this brand would find:
-1. Direct brand mentions and discussions
-2. Industry-specific conversations
-3. Customer complaints and feedback
-4. Competitor discussions
-5. Target audience discussions
+You MUST return exactly 15 subreddits. Think across ALL of these angles:
 
-IMPORTANT GUIDELINES:
-- Prioritize SPECIFIC niche subreddits over generic large ones
-- Include the brand's dedicated subreddit if it likely exists (r/brandname)
-- For local businesses, include city-specific subreddits
-- Consider product-specific subreddits (e.g., r/espresso for coffee brands)
-- Include "ask" subreddits where people seek recommendations
-- Include review/complaint subreddits relevant to the industry
-- Avoid overly generic subreddits unless highly relevant
-- Use REAL subreddit names that actually exist on Reddit
+1. BRAND-SPECIFIC: The brand's own subreddit (r/brandname), competitor subreddits
+2. INDUSTRY: Core industry subreddits where the product/service is discussed
+3. COMPLAINTS: Where people vent about this type of product/service (r/mildlyinfuriating, consumer rights, etc.)
+4. ADVICE/RECOMMENDATIONS: Where people ask "which X should I use?" (r/askreddit, industry-specific ask subs)
+5. LIFE EVENTS: Subreddits for life events that trigger using this product (e.g., storage = moving, downsizing, divorce, college, military)
+6. DEMOGRAPHICS: Subreddits for the target demographic (r/personalfinance, r/frugal, r/adulting, etc.)
+7. LOCAL/REGIONAL: City and state subreddits if the brand is location-specific
+8. COMPETITOR COMMUNITIES: Subreddits where competitors are discussed
+9. DEALS/VALUE: Where people compare prices and look for deals in this space
+10. PROFESSIONAL: Where employees or industry professionals discuss the business
 
-Respond in JSON format:
+Think laterally. For example, for "Public Storage":
+- Direct: r/selfstorage, r/publicstorage
+- Life events: r/moving, r/downsizing, r/divorce, r/college, r/Military
+- Advice: r/personalfinance, r/Frugal, r/povertyfinance
+- Complaints: r/mildlyinfuriating, r/assholedesign
+- Regional: city subreddits
+- Professional: r/smallbusiness, r/realestateinvesting
+
+Apply this same lateral thinking to "${brandName}" in the "${category}" industry.
+
+Return EXACTLY 15 results in this JSON format:
 {
   "suggestions": [
     {
       "subreddit": "subredditname",
-      "reason": "Brief explanation of relevance (max 15 words)",
+      "reason": "Why this subreddit is relevant (max 15 words)",
       "relevance": 0.95,
       "activity": "high",
       "subscribers": "500K+"
@@ -68,11 +73,15 @@ Respond in JSON format:
   ]
 }
 
-Relevance scores: 0.9-1.0 = direct match, 0.7-0.89 = highly relevant, 0.5-0.69 = moderately relevant
-Activity levels: high = very active daily posts, medium = regular activity, low = occasional posts
-Subscriber estimates: Use format like "50K+", "500K+", "2M+"
+RULES:
+- Return REAL subreddit names that exist on Reddit
+- You MUST return exactly 15 suggestions, no fewer
+- Mix of niche and broader subreddits
+- Relevance: 0.9-1.0 = direct match, 0.7-0.89 = highly relevant, 0.5-0.69 = moderately relevant
+- Activity: high/medium/low
+- Subscriber estimates: "50K+", "500K+", "2M+", etc.
 
-Respond with raw JSON only. No markdown or code blocks.`;
+Respond with raw JSON only.`;
 
   try {
     const response = await fetch('https://generativelanguage.googleapis.com/v1beta/openai/chat/completions', {
