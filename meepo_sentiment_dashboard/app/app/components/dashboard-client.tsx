@@ -263,7 +263,8 @@ export default function DashboardClient() {
         body: JSON.stringify({ sentimentId: itemId, tone: 'professional' }),
       });
       if (!response.ok) throw new Error('Failed');
-      setDraftResponses(prev => ({ ...prev, [itemId]: await response.json() }));
+      const result = await response.json();
+      setDraftResponses(prev => ({ ...prev, [itemId]: result }));
     } catch (error) {
       toast({ title: 'Error', description: 'Failed to generate response draft', variant: 'destructive' });
     } finally { setDraftLoading(false); setDraftingId(null); }
