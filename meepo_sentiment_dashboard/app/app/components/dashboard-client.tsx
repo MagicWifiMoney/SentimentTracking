@@ -9,7 +9,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
-import { Loader2, Search, Download, TrendingDown, TrendingUp, MessageCircle, AlertTriangle, ExternalLink, ChevronDown, ChevronUp, RefreshCw, BarChart3, Lightbulb, Target, Tag, Clock, Activity, Zap, Shield, Eye } from 'lucide-react';
+import { Loader2, Search, Download, TrendingDown, TrendingUp, MessageCircle, AlertTriangle, ExternalLink, ChevronDown, ChevronUp, RefreshCw, BarChart3, Lightbulb, Target, Tag, Clock, Activity, Zap, Shield, Eye, FileDown } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from '@/hooks/use-toast';
 import { format } from 'date-fns';
@@ -197,11 +198,11 @@ export default function DashboardClient() {
     } finally { setLoading(false); }
   };
 
-  const exportData = async () => {
+  const exportData = async (type: 'sentiment' | 'categories' | 'suggestions' | 'all' = 'sentiment') => {
     if (!currentBrandId) return;
     setExporting(true);
     try {
-      const params = new URLSearchParams({ brandId: currentBrandId.toString() });
+      const params = new URLSearchParams({ brandId: currentBrandId.toString(), type });
       if (sentiment !== 'all') params.set('sentiment', sentiment);
       if (subreddit !== 'all') params.set('subreddit', subreddit);
       if (search) params.set('search', search);
@@ -212,10 +213,10 @@ export default function DashboardClient() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      const currentBrand = brands.find(b => b.id === currentBrandId);
-      a.download = `${currentBrand?.name || 'brand'}_sentiment_${format(new Date(), 'yyyy-MM-dd')}.csv`;
+      a.download = ''; // Let Content-Disposition handle filename
       document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
-      toast({ title: "Exported", description: "CSV downloaded successfully" });
+      const labels = { sentiment: 'Sentiment data', categories: 'Issue categories', suggestions: 'Suggestions', all: 'Full report' };
+      toast({ title: "Exported", description: `${labels[type]} downloaded` });
     } catch (error) {
       toast({ title: "Error", description: "Failed to export data", variant: "destructive" });
     } finally { setExporting(false); }
@@ -382,9 +383,32 @@ export default function DashboardClient() {
                   )}
                 </Button>
               </div>
-              <Button onClick={exportData} disabled={exporting} variant="ghost" size="sm" className="h-8 text-xs text-muted-foreground hover:text-foreground">
-                {exporting ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Download className="w-3.5 h-3.5" />}
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm" className="h-8 text-xs text-muted-foreground hover:text-foreground" disabled={exporting}>
+                    {exporting ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <><Download className="w-3.5 h-3.5 mr-1" />Export</>}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  <DropdownMenuItem onClick={() => exportData('sentiment')} className="text-xs">
+                    <MessageCircle className="w-3.5 h-3.5 mr-2" />
+                    Sentiment Data
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => exportData('categories')} className="text-xs">
+                    <BarChart3 className="w-3.5 h-3.5 mr-2" />
+                    Issue Categories
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => exportData('suggestions')} className="text-xs">
+                    <Lightbulb className="w-3.5 h-3.5 mr-2" />
+                    Suggestions & Insights
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => exportData('all')} className="text-xs font-medium">
+                    <FileDown className="w-3.5 h-3.5 mr-2" />
+                    Full Report (All)
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </div>
