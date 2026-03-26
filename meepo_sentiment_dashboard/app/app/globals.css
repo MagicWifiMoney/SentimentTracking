@@ -1,76 +1,119 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 20% 7%;
+    --foreground: 210 20% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
- 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
- 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
- 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
- 
-    --destructive: 0 84.2% 60.2%;
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 142 60% 50%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 80%;
+
+    --muted: 220 16% 14%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 220 16% 18%;
+    --accent-foreground: 210 20% 92%;
+
+    --destructive: 0 72% 55%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
- 
-    --radius: 0.5rem;
-  }
- 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
- 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
- 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
- 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
- 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
- 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
- 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
- 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 220 16% 16%;
+    --input: 220 16% 18%;
+    --ring: 142 60% 50%;
+
+    --radius: 0.625rem;
+
+    --chart-1: 142 60% 50%;
+    --chart-2: 0 72% 55%;
+    --chart-3: 220 14% 50%;
+    --chart-4: 38 92% 55%;
+    --chart-5: 262 60% 58%;
+
+    --sentinel-green: 142 60% 50%;
+    --sentinel-red: 0 72% 55%;
+    --sentinel-amber: 38 92% 55%;
+    --sentinel-blue: 210 80% 55%;
+    --sentinel-purple: 262 60% 58%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: 0 0 20px -4px hsl(142 60% 50% / 0.25);
+  }
+  .glow-red {
+    box-shadow: 0 0 20px -4px hsl(0 72% 55% / 0.25);
+  }
+  .glow-amber {
+    box-shadow: 0 0 20px -4px hsl(38 92% 55% / 0.25);
+  }
+  .glow-blue {
+    box-shadow: 0 0 20px -4px hsl(210 80% 55% / 0.25);
+  }
+  .stat-card {
+    @apply relative overflow-hidden rounded-xl border border-border bg-card p-5 transition-all duration-300;
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.4), transparent);
+  }
+  .stat-card:hover {
+    border-color: hsl(var(--primary) / 0.3);
+    background: hsl(220 18% 11%);
+  }
+  .noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(220 16% 14%) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 16% 14%) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+  .slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
 }
