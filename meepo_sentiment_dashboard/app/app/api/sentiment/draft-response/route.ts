@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
-import { askGemini } from '@/lib/gemini';
+import { askClaude, askGemini } from '@/lib/gemini';
 
 export const dynamic = "force-dynamic";
 
@@ -83,7 +83,14 @@ Respond in JSON:
 
 Respond with raw JSON only.`;
 
-    const content = await askGemini(prompt, { maxTokens: 1000, temperature: 0.7 });
+    // Use Claude Sonnet for higher-quality, more natural response drafts
+    let content: string;
+    try {
+      content = await askClaude(prompt, { maxTokens: 1000, temperature: 0.7 });
+    } catch {
+      // Fallback to Gemini if Claude fails
+      content = await askGemini(prompt, { maxTokens: 1000, temperature: 0.7 });
+    }
 
     let parsed;
     try {

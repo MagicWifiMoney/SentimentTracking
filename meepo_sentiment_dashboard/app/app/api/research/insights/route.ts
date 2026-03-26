@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { PrismaClient } from '@prisma/client';
-import { askGemini } from '@/lib/gemini';
+import { askClaude, askGemini } from '@/lib/gemini';
 
 const prisma = new PrismaClient();
 
@@ -128,7 +128,12 @@ Write a 3-4 paragraph executive summary that includes:
 Be direct and specific. Reference actual data points. No generic filler.`;
 
   try {
-    return await askGemini(prompt, { maxTokens: 1000, temperature: 0.5 });
+    // Use Claude Sonnet for higher-quality executive summaries
+    try {
+      return await askClaude(prompt, { maxTokens: 1000, temperature: 0.5 });
+    } catch {
+      return await askGemini(prompt, { maxTokens: 1000, temperature: 0.5 });
+    }
   } catch (error) {
     console.error('AI summary generation failed, using fallback:', error);
     return generateFallbackSummary(results, painPointAnalysis, sentimentTrends);

@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { askGeminiJSON } from '@/lib/gemini';
 
 export const dynamic = "force-dynamic";
 
@@ -428,6 +429,11 @@ export async function POST(request: NextRequest) {
       }, { status: 500 });
     }
 
+    // AI-classify posts in batches (sentiment + intent + category)
+    console.log(`[Refresh] AI-classifying ${posts.length} posts with Gemini Flash...`);
+    await aiClassifyPosts(posts, brand.name);
+    console.log(`[Refresh] AI classification complete`);
+
     // Store posts in database (unique per URL + brand)
     let newRecords = 0;
     let updatedRecords = 0;
@@ -451,6 +457,8 @@ export async function POST(request: NextRequest) {
             sentimentLabel: post.sentimentLabel,
             isNegativeAboutBrand: post.isNegativeAboutBrand,
             matchedKeywords: post.matchedKeywords,
+            intentType: post.intentType || null,
+            intentScore: post.intentScore || null,
             updatedAt: new Date()
           },
           create: {
@@ -467,6 +475,8 @@ export async function POST(request: NextRequest) {
             sentimentLabel: post.sentimentLabel,
             isNegativeAboutBrand: post.isNegativeAboutBrand,
             matchedKeywords: post.matchedKeywords,
+            intentType: post.intentType || null,
+            intentScore: post.intentScore || null,
             brandId: brandId
           }
         });
@@ -509,6 +519,69 @@ export async function POST(request: NextRequest) {
       error: 'Internal server error', 
       message: 'An unexpected error occurred during refresh' 
     }, { status: 500 });
+  }
+}
+
+// AI-powered classification: replaces keyword-based sentiment with Gemini Flash
+async function aiClassifyPosts(posts: any[], brandName: string) {
+  const batchSize = 15;
+
+  for (let i = 0; i < posts.length; i += batchSize) {
+    const batch = posts.slice(i, i + batchSize);
+
+    const postsForPrompt = batch.map((p, idx) =>
+      `[${idx}] r/${p.subreddit} | "${p.postTitle?.substring(0, 100)}"\n${(p.content || '').substring(0, 250)}`
+    ).join('\n\n');
+
+    const prompt = `Classify these Reddit posts about "${brandName}". For each post, determine:
+
+1. sentiment: "positive", "negative", or "neutral"
+2. sentimentScore: -1.0 to 1.0 (negative to positive)
+3. isNegativeAboutBrand: true if the post is specifically negative about ${brandName} (not just negative in general)
+4. intentType: one of "purchase" (considering buying), "complaint" (reporting a problem), "comparison" (comparing brands), "question" (asking for info), "praise" (positive review), or "discussion" (general talk)
+5. intentScore: 0.0 to 1.0 (how strong the intent signal is)
+
+POSTS:
+${postsForPrompt}
+
+Respond in JSON:
+{
+  "results": [
+    {
+      "index": 0,
+      "sentiment": "negative",
+      "sentimentScore": -0.75,
+      "isNegativeAboutBrand": true,
+      "intentType": "complaint",
+      "intentScore": 0.9
+    }
+  ]
+}
+
+Respond with raw JSON only.`;
+
+    try {
+      const result = await askGeminiJSON<{ results: any[] }>(prompt, { maxTokens: 1500, temperature: 0.2 });
+
+      for (const classification of result.results || []) {
+        const post = batch[classification.index];
+        if (!post) continue;
+
+        post.sentimentScore = classification.sentimentScore ?? post.sentimentScore;
+        post.sentimentLabel = classification.sentiment ?? post.sentimentLabel;
+        post.isNegativeAboutBrand = classification.isNegativeAboutBrand ?? post.isNegativeAboutBrand;
+        post.intentType = classification.intentType ?? null;
+        post.intentScore = classification.intentScore ?? null;
+      }
+    } catch (error) {
+      console.error(`[Refresh] AI classification failed for batch ${i}, keeping keyword scores:`, error);
+      // Posts keep their keyword-based scores as fallback
+    }
+
+    // Small delay between batches
+    if (i + batchSize < posts.length) {
+      await new Promise(r => setTimeout(r, 200));
+    }
   }
 }
 
